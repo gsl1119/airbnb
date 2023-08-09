@@ -25,6 +25,7 @@ const Home = memo(() => {
       <div className="content">
         <SectionHeader title={goodPriceInfo.title}></SectionHeader>
         <ul>
+          123
           {goodPriceInfo.list &&
             goodPriceInfo.list.map((item, index) => {
               return <li key={item.id}>{item.name}</li>;
