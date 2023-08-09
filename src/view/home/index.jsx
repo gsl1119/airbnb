@@ -23,14 +23,15 @@ const Home = memo(() => {
     <HomeWrapper>
       <HomeBanner></HomeBanner>
       <div className="content">
-        <SectionHeader title={goodPriceInfo.title}></SectionHeader>
-        <ul>
-          123
-          {goodPriceInfo.list &&
-            goodPriceInfo.list.map((item, index) => {
-              return <li key={item.id}>{item.name}</li>;
-            })}
-        </ul>
+        <div className="goog-price">
+          <SectionHeader title={goodPriceInfo.title}></SectionHeader>
+          <ul>
+            {goodPriceInfo.list &&
+              goodPriceInfo.list.map((item, index) => {
+                return <li key={item.id}>{item.name}</li>;
+              })}
+          </ul>
+        </div>
       </div>
     </HomeWrapper>
   );

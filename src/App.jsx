@@ -3,7 +3,7 @@ import { useRoutes } from "react-router-dom";
 
 import routes from "./router";
 import AppHeader from "@/components/app-header";
-import AppFooter from "./components/app-footer";
+import AppFooter from "@/components/app-footer";
 
 const App = memo(() => {
   return (
