@@ -5,6 +5,7 @@ import HomeBanner from "./c-cpns/home-banner";
 import { HomeWrapper } from "./style";
 import { fetchHomeDataAction } from "@/store/modules/home";
 import SectionHeader from "@/components/section-header";
+import ItemRoom from "@/components/room-item";
 const Home = memo(() => {
   // 从redux中获取数据
   const { goodPriceInfo } = useSelector(
@@ -23,12 +24,12 @@ const Home = memo(() => {
     <HomeWrapper>
       <HomeBanner></HomeBanner>
       <div className="content">
-        <div className="goog-price">
+        <div className="good-price">
           <SectionHeader title={goodPriceInfo.title}></SectionHeader>
-          <ul>
+          <ul className="room-list">
             {goodPriceInfo.list &&
-              goodPriceInfo.list.map((item, index) => {
-                return <li key={item.id}>{item.name}</li>;
+              goodPriceInfo.list?.slice(0, 8).map((item, index) => {
+                return <ItemRoom itemData={item} key={item.id} />;
               })}
           </ul>
         </div>
